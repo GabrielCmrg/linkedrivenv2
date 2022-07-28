@@ -18,3 +18,13 @@ JOIN users
 ON users.id = testimonials."writerId"
 WHERE users.id = 435
 GROUP BY users.name;
+
+-- EXERCÍCIO 4
+
+SELECT MAX(jobs.salary) AS "maximumSalary", roles.name AS "role"
+FROM jobs
+JOIN roles
+ON roles.id = jobs."roleId"
+WHERE jobs.active = TRUE
+GROUP BY roles.name
+ORDER BY "maximumSalary";
